@@ -1,0 +1,21 @@
+2022-04-27 01:31:29.682 00000001    INFO .common.JdbcConnectionProvider Opening connection to database: jdbc:postgresql://172.21.0.3:5432/fhirdb
+2022-04-27 01:31:29.852 00000001    INFO base.utils.schema.LeaseManager Requesting update lease for schema 'FHIRDATA' [attempt 1]
+2022-04-27 01:31:29.909 00000001    INFO   com.ibm.fhir.schema.app.Main Schema is up-to-date [version=25]; skipping update for: 'FHIRDATA'
+2022-04-27 01:31:29.910 00000001    INFO base.utils.schema.LeaseManager Canceling lease for schema 'FHIRDATA'
+2022-04-27 01:31:29.912 0000001b    INFO base.utils.schema.LeaseManager Lease maintenance loop terminated
+2022-04-27 01:31:29.913 00000001    INFO base.utils.schema.LeaseManager Lease maintenance thread terminated
+2022-04-27 01:31:29.920 00000001    INFO base.utils.schema.LeaseManager Lease canceled for schema 'FHIRDATA'
+2022-04-27 01:31:29.954 00000001    INFO base.utils.schema.LeaseManager Requesting update lease for schema 'FHIR_OAUTH' [attempt 1]
+2022-04-27 01:31:29.980 00000001    INFO   com.ibm.fhir.schema.app.Main Schema is current; skipping update for: 'FHIR_OAUTH'
+2022-04-27 01:31:29.981 00000001    INFO base.utils.schema.LeaseManager Canceling lease for schema 'FHIR_OAUTH'
+2022-04-27 01:31:29.981 0000001c    INFO base.utils.schema.LeaseManager Lease maintenance loop terminated
+2022-04-27 01:31:29.982 00000001    INFO base.utils.schema.LeaseManager Lease maintenance thread terminated
+2022-04-27 01:31:29.983 00000001    INFO base.utils.schema.LeaseManager Lease canceled for schema 'FHIR_OAUTH'
+2022-04-27 01:31:30.025 00000001    INFO base.utils.schema.LeaseManager Requesting update lease for schema 'FHIR_JBATCH' [attempt 1]
+2022-04-27 01:31:30.052 00000001    INFO   com.ibm.fhir.schema.app.Main Schema is current; skipping update for: 'FHIR_JBATCH'
+2022-04-27 01:31:30.053 00000001    INFO base.utils.schema.LeaseManager Canceling lease for schema 'FHIR_JBATCH'
+2022-04-27 01:31:30.053 0000001d    INFO base.utils.schema.LeaseManager Lease maintenance loop terminated
+2022-04-27 01:31:30.055 00000001    INFO base.utils.schema.LeaseManager Lease maintenance thread terminated
+2022-04-27 01:31:30.056 00000001    INFO base.utils.schema.LeaseManager Lease canceled for schema 'FHIR_JBATCH'
+2022-04-27 01:31:30.086 00000001    INFO   com.ibm.fhir.schema.app.Main Processing took:   0.429 s
+2022-04-27 01:31:30.087 00000001    INFO   com.ibm.fhir.schema.app.Main SCHEMA CHANGE: OK
