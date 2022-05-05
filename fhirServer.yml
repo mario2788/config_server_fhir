@@ -1,0 +1,36 @@
+version: '2'
+
+networks:
+     app_tier:
+          driver: bridge
+
+services:
+     postgres_postgres_1:
+          image: 'postgres'
+          restart: always
+          networks:
+               - app_tier
+          volumes:
+               - /home/mario/postgresql:/var/lib/postgresql/data
+               - /home/mario/fhir_config/postgress/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
+          environment:
+               - POSTGRES_USER=fhirserver
+               - POSTGRES_PASSWORD=Passw0rd!
+               - POSTGRES_DB=fhirdb
+          ports:
+               - '5432:5432'
+
+     fhir:
+          image: 'ibmcom/ibm-fhir-server'
+          restart: always
+          networks:
+               - app_tier
+          volumes:
+               - /home/mario/fhir_config/default/fhir-server-config.json:/opt/ol/wlp/usr/servers/defaultServer/config/default/fhir-server-config.json
+               - /home/mario/fhir_config/overrides/server.xml:/opt/ol/wlp/usr/servers/defaultServer/server.xml
+               - /home/mario/fhir_config/default/datasource.xml:/opt/ol/wlp/usr/servers/defaultServer/configDropins/default/datasource.xml
+               - /home/mario/fhir_config/keyStore:/opt/ol/wlp/usr/servers/defaultServer/resources/security
+          environment:
+               - BOOTSTRAP_DB=false
+          ports:
+               - '9443:9443'
