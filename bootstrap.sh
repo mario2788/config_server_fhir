@@ -9,13 +9,13 @@ db.database=fhirdb
 user=fhirserver
 password=Passw0rd!
 
-java -jar ./tools/fhir-persistence-schema-4.10.2-cli.jar \
+java -jar ./fhir-persistence-schema-4.11.1-cli.jar \
   --db-type postgresql \
   --prop-file fhirdb.properties \
   --schema-name fhirdata \
   --create-schemas
 
-java -jar ./tools/fhir-persistence-schema-4.10.2-cli.jar \
+java -jar fhir-persistence-schema-4.11.1-cli.jar \
 --db-type postgresql \
 --prop-file fhirdb.properties \
 --schema-name fhirdata \

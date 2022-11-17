@@ -15,6 +15,7 @@
              but we include it here to avoid NoClassDefFound in our classes that *can* use it -->
         <feature>mpJwt-1.2</feature>
     </featureManager>
+    
     <!-- ============================================================== -->
    <!-- TENANT: default; DSID: default; TYPE: read-write               -->
    <!-- ============================================================== -->
@@ -54,7 +55,7 @@
         Note: on Linux, the server must be running with root priviledges in order to
         listen on ports <= 1024.
      -->
-    <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9444" httpsPort="9443" onError="FAIL"/>
+    <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9443" httpsPort="9443" onError="FAIL"/>
 
     <!--
         The trace specification can be set via the TRACE_SPEC environment variable (or by overriding it below).

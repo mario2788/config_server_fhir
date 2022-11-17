@@ -1,3 +1,5 @@
+# sudo docker-compose -f fhirServer.yml  up -d
+
 version: '2'
 
 networks:
@@ -6,7 +8,7 @@ networks:
 
 services:
      postgres_postgres_1:
-          image: 'postgres'
+          image: 'postgres:14'
           restart: always
           networks:
                - app_tier
