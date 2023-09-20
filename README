@@ -1,0 +1,15 @@
+
+### Instalación
+
+Desplegar  el fhirServer.yml:
+
+	$ docker-compose -f fhirServer.yml up -d
+
+El servidor quedara en operación, probar con:
+	
+	$ curl localhost:9443/fhir-server/api/v4/metadata
+
+Para crear recurso es necesario crear los esquemas en la DB, hará
+falta entrar al contenedor del servidor fhir y ubicarse en /config
+para configurar el bootstrap.sh y ejecutarlo.
+

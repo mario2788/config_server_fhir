@@ -13,8 +13,8 @@ services:
           networks:
                - app_tier
           volumes:
-               - /home/mario/postgresql:/var/lib/postgresql/data
-               - /home/mario/fhir_config/postgress/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
+               - /home/mario/postgres_data:/var/lib/postgresql/data
+               - ./postgress/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
           environment:
                - POSTGRES_USER=fhirserver
                - POSTGRES_PASSWORD=Passw0rd!
@@ -28,10 +28,10 @@ services:
           networks:
                - app_tier
           volumes:
-               - /home/mario/fhir_config/default/fhir-server-config.json:/opt/ol/wlp/usr/servers/defaultServer/config/default/fhir-server-config.json
-               - /home/mario/fhir_config/overrides/server.xml:/opt/ol/wlp/usr/servers/defaultServer/server.xml
-               - /home/mario/fhir_config/default/datasource.xml:/opt/ol/wlp/usr/servers/defaultServer/configDropins/default/datasource.xml
-               - /home/mario/fhir_config/keyStore:/opt/ol/wlp/usr/servers/defaultServer/resources/security
+               - ./default/fhir-server-config.json:/opt/ol/wlp/usr/servers/defaultServer/config/default/fhir-server-config.json
+               - .r/overrides/server.xml:/opt/ol/wlp/usr/servers/defaultServer/server.xml
+               - ./default/datasource.xml:/opt/ol/wlp/usr/servers/defaultServer/configDropins/default/datasource.xml
+               - ./keyStore:/opt/ol/wlp/usr/servers/defaultServer/resources/security
           environment:
                - BOOTSTRAP_DB=false
           ports:
