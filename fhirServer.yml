@@ -29,9 +29,10 @@ services:
                - app_tier
           volumes:
                - ./default/fhir-server-config.json:/opt/ol/wlp/usr/servers/defaultServer/config/default/fhir-server-config.json
-               - .r/overrides/server.xml:/opt/ol/wlp/usr/servers/defaultServer/server.xml
+               - ./overrides/server.xml:/opt/ol/wlp/usr/servers/defaultServer/server.xml
                - ./default/datasource.xml:/opt/ol/wlp/usr/servers/defaultServer/configDropins/default/datasource.xml
                - ./keyStore:/opt/ol/wlp/usr/servers/defaultServer/resources/security
+               - ./jar:/home
           environment:
                - BOOTSTRAP_DB=false
           ports:
